@@ -46,18 +46,6 @@ class UpdateForm(FlaskForm):
     submit = SubmitField('Update')
 
 
-# new_city = City(
-#     city="Bangkok",
-#     country="Thailand",
-#     description="Bangkok, Thailand’s capital, is a large city known for ornate shrines and vibrant street life. The boat-filled Chao Phraya River feeds its network of canals, flowing past the Rattanakosin royal district, home to opulent Grand Palace and its sacred Wat Phra Kaew Temple. ",
-#     favorite_place="Phuket Island",
-#     ranking=5,
-#     img_url="https://www.tripsavvy.com/thmb/IkoPZKwM5BmhWB-064flnLZWylo=/3804x3804/smart/filters:no_upscale()/bangkok-at-sunset-5bd5f2f746e0fb005818e042.jpg"
-# )
-# db.session.add(new_city)
-# db.session.commit()
-
-
 @app.route("/")
 def home():
     all_cities = db.session.query(City).all()
