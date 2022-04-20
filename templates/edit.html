@@ -1,0 +1,19 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+{% block title %}Edit City{% endblock %}
+
+{% block content %}
+<div class="content">
+  <h1 class="heading">Edit: {{city.city}} ({{city.country}})</h1>
+    <p class="description">You can edit the ranking and favorite place here.</p>
+    {{ wtf.quick_form(form, novalidate=True) }}
+  </div>
+{% endblock %}
